@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Kind of Werewolf Are You?</title>
+  <style>
+    body {
+      background-color: #0b0b0e;
+      color: #e5e5e5;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: #d1a3ff;
+      text-shadow: 0 0 10px #d1a3ff;
+    }
+
+    .question {
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 600px;
+      background-color: #1c1c24;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(209, 163, 255, 0.3);
+    }
+
+    .question p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .options button {
+      background-color: #2d2d3a;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      margin: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .options button:hover {
+      background-color: #442c69;
+    }
+
+    .options button.selected {
+      background-color: #9333ea;
+      box-shadow: 0 0 10px #9333ea;
+    }
+
+    #finish {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #a855f7;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 15px #a855f7;
+    }
+
+    #finish:hover {
+      background-color: #9333ea;
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ What Kind of Werewolf Are You? ✨</h1>
+
+  <div class="question">
+    <p>1. What’s your vibe at midnight?</p>
+    <div class="options">
+      <button> Dancing under the moon </button>
+      <button> Hunting snacks </button>
+      <button> Writing dark poetry </button>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>2. Pick your weapon of choice:</p>
+    <div class="options">
+      <button> Claws </button>
+      <button> Mind games </button>
+      <button> Vocal screech </button>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>3. What’s your werewolf hangout spot?</p>
+    <div class="options">
+      <button> Forest </button>
+      <button> Nightclub </button>
+      <button> Abandoned castle </button>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>4. What color is your aura?</p>
+    <div class="options">
+      <button> Purple </button>
+      <button> Crimson </button>
+      <button> Silver </button>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>5. Pick your BTS anthem:</p>
+    <div class="options">
+      <button> Blood Sweat & Tears </button>
+      <button> Black Swan </button>
+      <button> Dynamite (of course) </button>
+    </div>
+  </div>
+
+  <button id="finish">Finish & Reveal My Werewolf Type</button>
+
+  <script>
+    // Add interactivity for selecting answers
+    const questionBlocks = document.querySelectorAll('.question');
+    questionBlocks.forEach(block => {
+      const buttons = block.querySelectorAll('button');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+        });
+      });
+    });
+
+    // Redirect to Dynamite MV
+    document.getElementById("finish").addEventListener("click", function () {
+      if (/Android|iPhone/i.test(navigator.userAgent)) {
+        window.location.href = "youtube://www.youtube.com/watch?v=gdZLi9oWNZg";
+        setTimeout(() => {
+          window.location.href = "https://www.youtube.com/watch?v=gdZLi9oWNZg";
+        }, 500);
+      } else {
+        window.location.href = "https://www.youtube.com/watch?v=gdZLi9oWNZg";
+      }
+    });
+  </script>
+</body>
+</html>
